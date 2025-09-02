@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOANYTH MARKETING</title>
+  <style>
+    /* RESET */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+
+    body {
+      background-color: #0f1115;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, #0f1115, #1a1d24);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      color: #00aaff;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    /* Services section */
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 3rem 1rem;
+    }
+
+    .service {
+      background: #1a1d24;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 300px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 20px rgba(0, 170, 255, 0.3);
+    }
+
+    .service h2 {
+      margin-bottom: 1rem;
+      color: #00aaff;
+    }
+
+    /* Contact section */
+    .contact {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: #14161c;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background: #00aaff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .contact a:hover {
+      background: #0088cc;
+      transform: scale(1.05);
+    }
+
+    /* Formulaire */
+    #formulaireSite {
+      display: none;
+      background: #1a1d24;
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      animation: fadeIn 0.6s ease;
+    }
+
+    #formulaireSite label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      font-weight: bold;
+      color: #ccc;
+    }
+
+    #formulaireSite input,
+    #formulaireSite textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: #2a2e39;
+      color: #fff;
+    }
+
+    #formulaireSite button {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      background: #00aaff;
+      color: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    #formulaireSite button:hover {
+      background: #0088cc;
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      .services { flex-direction: column; align-items: center; }
+      header h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>DOANYTH MARKETING</h1>
+    <p>Votre partenaire pour booster votre visibilité</p>
+  </header>
+
+  <section class="services">
+    <div class="service" onclick="window.location.href='mailto:DOANYTHMARKETING@outlook.com?subject=Demande%20Publicité%20en%20Ligne'">
+      <h2>Publicité en ligne</h2>
+      <p>Maximisez votre retour sur investissement avec des campagnes performantes.</p>
+    </div>
+    <div class="service" onclick="window.location.href='mailto:DOANYTHMARKETING@outlook.com?subject=Demande%20Gestion%20Réseaux%20Sociaux'">
+      <h2>Gestion Réseaux Sociaux</h2>
+      <p>Augmentez votre communauté et engagez vos clients efficacement.</p>
+    </div>
+    <div class="service" onclick="afficherFormulaire()">
+      <h2>Création de site web</h2>
+      <p>Obtenez un site moderne, optimisé et adapté à vos besoins.</p>
+    </div>
+  </section>
+
+  <section id="formulaireSite">
+    <h2>Briefing - Création de site web</h2>
+    <form action="https://formspree.io/f/movnapak" method="POST">
+      <label for="entreprise">Nom de l’entreprise *</label>
+      <input type="text" id="entreprise" name="entreprise" required>
+
+      <label for="secteur">Secteur d’activité *</label>
+      <input type="text" id="secteur" name="secteur" required>
+
+      <label for="objectifs">Objectifs du site *</label>
+      <textarea id="objectifs" name="objectifs" rows="4" required></textarea>
+
+      <label for="pages">Pages souhaitées</label>
+      <textarea id="pages" name="pages" rows="3"></textarea>
+
+      <label for="style">Style graphique recherché</label>
+      <input type="text" id="style" name="style">
+
+      <label for="couleurs">Couleurs / branding existants</label>
+      <input type="text" id="couleurs" name="couleurs">
+
+      <label for="fonctionnalites">Fonctionnalités spécifiques</label>
+      <textarea id="fonctionnalites" name="fonctionnalites" rows="3"></textarea>
+
+      <label for="contact">Email de contact *</label>
+      <input type="email" id="contact" name="_replyto" required>
+
+      <button type="submit">Envoyer mon briefing</button>
+    </form>
+  </section>
+
+  <section class="contact">
+    <h2>Contactez-nous</h2>
+    <p>Discutons ensemble de vos projets marketing</p>
+    <a href="mailto:DOANYTHMARKETING@outlook.com?subject=Contact%20Général">Envoyer un message</a>
+  </section>
+
+  <script>
+    function afficherFormulaire() {
+      const form = document.getElementById("formulaireSite");
+      form.style.display = "block";
+      form.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
